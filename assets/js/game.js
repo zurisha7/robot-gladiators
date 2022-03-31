@@ -113,6 +113,13 @@ for (var i = 0; i < enemyNames.length; i++) {
             //if we're not at the last enemy in the Array
 
             if (playerHealth > 0 && i < enemyNames.length - 1) {
+
+                //ask if player wants to use the store before next round
+
+                var storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
+
+                // if yes, take them to the store()function
+                if (storeConrirm) {
                 shop();
             }
          }
@@ -143,8 +150,11 @@ for (var i = 0; i < enemyNames.length; i++) {
     };
 
     var shop = function() {
-        console.log("entered the shop");
-    };
+        //ask player what they'd like to do 
+        var shopOptionPrompt = window.prompt(
+            "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice.");
+        };
+    
 
     //ask player if they'd like to play again
     var playAgainConfirm = window.confirm("Would you like to play again?");
